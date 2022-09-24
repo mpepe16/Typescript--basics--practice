@@ -8,6 +8,6 @@ let myResult: Result ={
 let player : Person = {
     name: "",
     formatName: function (): string {
-        throw new Error("Function not implemented.");
+        return `Hi ${this.name}`;
     }
 }
