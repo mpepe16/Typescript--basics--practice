@@ -1,11 +1,9 @@
 class Utility {
-    static getInputValue(elementId:string): string | undefined {
-        const inputElement :HTMLInputElement = <HTMLInputElement>document.getElementById(elementId);
-        if(inputElement.value === ''){
-            return undefined;
-        }
-        else{
-            return inputElement.value;
-        }
+
+    static getInputValue(elementID: string): string {
+  
+      const inputElement: HTMLInputElement = <HTMLInputElement>document.getElementById(elementID);
+      return inputElement.value;
     }
-}
+  
+  }

@@ -7,8 +7,48 @@
     <title>Document</title>
 </head>
 <body>
-    <input id="playerName" type="text" name="playerName" value="Name" />
-    <button id="submitButton" type="button" name="submit">  Click here  </button>
+    <nav>
+        <div>
+            <div>
+                <span>MultiMath</span>
+            </div>
+        </div>
+    </nav>
+    <div id="nameform">
+        <div>
+            <label for="playername" >Player Name</label>
+            <div >
+                <input type="text" id="playerName" size="20" placeholder="Player Name">
+            </div>
+    </div>
+    <div>
+        <label for="factor" >Factor</label>
+        <div>
+            <input type="text" id="factor" size="20" value="5" placeholder="Factor">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="problemCount">Number of Problems</label>
+        <div>
+            <input type="text"  id="problemCount" size="20" placeholder="Number of Problems">
+        </div>
+    </div>
+
+    <div>
+        <div>
+            <button  id="startGame">Start Game</button>
+            <button  id="calculate" disabled="">Calculate Score</button>
+        </div>
+    </div>
+    </div>
+    <div id="game"></div>
+    
+    <div id="scores">
+        <h2>Scoreboard</h2>
+        <h4 id="postedScores">No scores yet</h4>
+    </div>
+
+    <div id="messages"></div>
     <script src="./script/app.js"></script>
 </body>
 </html>
