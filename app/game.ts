@@ -3,6 +3,8 @@
 /// <reference path="player.ts" />
 /// <reference path="scoreboard.ts" />
 /// <reference path="shapes/shape.ts" />
+/// <reference path="shapes/circle.ts" />
+
 
 
 class Game {
@@ -57,5 +59,6 @@ class Game {
   
       // disable the calculate score button
       document.getElementById('calculate')!.setAttribute('disabled', 'true');
+      
     }  
   }

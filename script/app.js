@@ -43,11 +43,28 @@ class Shape {
         return this.centerY;
     }
 }
+/// <reference path="shape.ts" />
+class Circle extends Shape {
+    // Possible to use radius as a parameter property. Just adding as public radius in the constructor
+    constructor(centerX, centerY, radius) {
+        super(centerX, centerY);
+        this.pi = 3.14;
+        this.radius = radius;
+    }
+    logShape() {
+        let instance = this.constructor;
+        console.log(instance.name);
+    }
+    calculateAre() {
+        return (this.radius * this.radius) * this.pi;
+    }
+}
 /// <reference path="utility.ts" />
 /// <reference path="result.ts" />
 /// <reference path="player.ts" />
 /// <reference path="scoreboard.ts" />
 /// <reference path="shapes/shape.ts" />
+/// <reference path="shapes/circle.ts" />
 class Game {
     constructor(player, problemCount, factor) {
         this.player = player;
@@ -99,6 +116,8 @@ class Game {
 /// <reference path="player.ts" />
 /// <reference path="game.ts" />
 let newGame;
+let circle1 = new Circle(5, 5, 5);
+console.log(circle1.logShape());
 // add click handler to the start game button
 document.getElementById('startGame').addEventListener('click', () => {
     const player = new Player();
