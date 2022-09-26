@@ -1,7 +1,6 @@
 {
     "compilerOptions": {
       "target": "ES2015",      
-      "module": "commonjs",    
       "sourceMap": true,       
       "outDir": "./script",    
       "strict": true,          
@@ -13,5 +12,9 @@
       "noFallthroughCasesInSwitch": true,
       "esModuleInterop": true,       
       "experimentalDecorators": true,
-    }
+      "outFile": "../script/app.js"
+    },
+    "files": [
+        "./app.ts"
+    ]
   }
