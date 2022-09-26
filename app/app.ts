@@ -12,15 +12,7 @@ function startGame() {
     logPlayer(playerName);
 } 
 document.getElementById('submitButton')!.addEventListener('click', startGame);
-function getInputValue(elementId:string): string | undefined {
-    const inputElement :HTMLInputElement = <HTMLInputElement>document.getElementById(elementId);
-    if(inputElement.value === ''){
-        return undefined;
-    }
-    else{
-        return inputElement.value;
-    }
-}
+
 
 // The Game Player string represnt a default value. 
 
