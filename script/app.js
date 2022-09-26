@@ -31,10 +31,23 @@ class Scoreboard {
         scoresElement.innerHTML = output;
     }
 }
+class Shape {
+    constructor(centerX, centerY) {
+        this.centerX = centerX;
+        this.centerY = centerY;
+    }
+    getX() {
+        return this.centerX;
+    }
+    getY() {
+        return this.centerY;
+    }
+}
 /// <reference path="utility.ts" />
 /// <reference path="result.ts" />
 /// <reference path="player.ts" />
 /// <reference path="scoreboard.ts" />
+/// <reference path="shapes/shape.ts" />
 class Game {
     constructor(player, problemCount, factor) {
         this.player = player;
