@@ -17,6 +17,7 @@ class Utility {
             let element = document.createElement('option');
             element.textContent = option;
             element.value = option;
+            element.setAttribute('id', i.toString());
             dropdownElement.appendChild(element);
         }
     }
@@ -69,6 +70,11 @@ class Circle extends Shape {
     calculateAre() {
         return (this.radius * this.radius) * this.pi;
     }
+    collectProperties() {
+        let properties = [];
+        properties.push(this.radius, this.pi);
+        return properties;
+    }
 }
 /// <reference path="shape.ts" />
 class Triangle extends Shape {
@@ -86,6 +92,11 @@ class Triangle extends Shape {
         let sides = [this.side1, this.side2, this.side3];
         let base = Math.max(...sides);
         return (this.height * base) / 2;
+    }
+    collectProperties() {
+        let properties = [];
+        properties.push(this.side1, this.side2, this.side3, this.height);
+        return properties;
     }
 }
 /// <reference path="utility.ts" />
@@ -148,7 +159,7 @@ class Game {
 let newGame;
 let circle1 = new Circle(5, 5, 5, "Circle");
 let triangle1 = new Triangle(1, 2, 3, 4, 5, "Triangle");
-let shapes = [circle1];
+let shapes = [circle1, triangle1];
 console.log(circle1.logShape());
 // add click handler to the start game button
 document.getElementById('startGame').addEventListener('click', () => {
