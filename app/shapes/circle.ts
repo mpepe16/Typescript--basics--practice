@@ -7,8 +7,8 @@ class Circle extends Shape {
 
     // Possible to use radius as a parameter property. Just adding as public radius in the constructor
 
-    constructor(centerX: number, centerY: number, radius: number){
-        super(centerX, centerY);
+    constructor(centerX: number, centerY: number, radius: number,name:string){
+        super(centerX, centerY,name);
         this.radius = radius;
     }
     logShape(): void {

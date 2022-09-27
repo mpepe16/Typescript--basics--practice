@@ -10,6 +10,16 @@ class Utility {
         const inputElement = document.getElementById(elementID);
         return inputElement.value;
     }
+    static generatedropDown(shapes) {
+        const dropdownElement = document.getElementById('dropdownElement');
+        for (let i = 0; i < shapes.length; i++) {
+            let option = shapes[i].name;
+            let element = document.createElement('option');
+            element.textContent = option;
+            element.value = option;
+            dropdownElement.appendChild(element);
+        }
+    }
 }
 /// <reference path="result.ts" />
 class Scoreboard {
@@ -32,9 +42,10 @@ class Scoreboard {
     }
 }
 class Shape {
-    constructor(centerX, centerY) {
+    constructor(centerX, centerY, name) {
         this.centerX = centerX;
         this.centerY = centerY;
+        this.name = name;
     }
     getX() {
         return this.centerX;
@@ -46,8 +57,8 @@ class Shape {
 /// <reference path="shape.ts" />
 class Circle extends Shape {
     // Possible to use radius as a parameter property. Just adding as public radius in the constructor
-    constructor(centerX, centerY, radius) {
-        super(centerX, centerY);
+    constructor(centerX, centerY, radius, name) {
+        super(centerX, centerY, name);
         this.pi = 3.14;
         this.radius = radius;
     }
@@ -116,7 +127,8 @@ class Game {
 /// <reference path="player.ts" />
 /// <reference path="game.ts" />
 let newGame;
-let circle1 = new Circle(5, 5, 5);
+let circle1 = new Circle(5, 5, 5, "Circle");
+let shapes = [circle1];
 console.log(circle1.logShape());
 // add click handler to the start game button
 document.getElementById('startGame').addEventListener('click', () => {
@@ -126,6 +138,9 @@ document.getElementById('startGame').addEventListener('click', () => {
     const factor = Number(Utility.getInputValue('factor'));
     newGame = new Game(player, problemCount, factor);
     newGame.displayGame();
+    document.getElementById('showOptions').addEventListener('click', () => {
+        Utility.generatedropDown(shapes);
+    });
 });
 // add click handler to the calculate score button
 document.getElementById('calculate').addEventListener('click', () => {

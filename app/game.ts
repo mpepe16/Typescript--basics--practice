@@ -4,6 +4,7 @@
 /// <reference path="scoreboard.ts" />
 /// <reference path="shapes/shape.ts" />
 /// <reference path="shapes/circle.ts" />
+/// <reference path="shapes/triangle.ts" />
 
 
 

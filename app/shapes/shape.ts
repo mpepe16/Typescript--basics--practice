@@ -1,9 +1,12 @@
 abstract class Shape{
     centerX : number;
     centerY : number;
-    constructor(centerX : number, centerY : number){
+    name : string;
+    constructor(centerX : number, centerY : number, name : string){
         this.centerX = centerX
-        this.centerY = centerY;}
+        this.centerY = centerY;
+        this.name = name;
+    }
     getX(){
         return this.centerX;
     }

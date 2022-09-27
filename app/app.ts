@@ -3,8 +3,13 @@
 /// <reference path="player.ts" />
 /// <reference path="game.ts" />
 
+
+
 let newGame: Game;
-let circle1 : Shape = new Circle(5,5,5);
+
+let circle1 : Shape = new Circle(5,5,5, "Circle");
+let triangle1 : Shape = new Triangle(1,2,3,4,5, "Triangle");
+let shapes = [circle1];
 console.log(circle1.logShape());
 // add click handler to the start game button
 document.getElementById('startGame')!.addEventListener('click', () => {
@@ -16,9 +21,13 @@ document.getElementById('startGame')!.addEventListener('click', () => {
 
   newGame = new Game(player, problemCount, factor);
   newGame.displayGame();
+  
 });
 
 // add click handler to the calculate score button
 document.getElementById('calculate')!.addEventListener('click', () => {
   newGame.calculateScore();
+});
+document.getElementById('showOptions')!.addEventListener('click', () => {
+  Utility.generatedropDown(shapes);
 });
