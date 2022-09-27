@@ -70,12 +70,31 @@ class Circle extends Shape {
         return (this.radius * this.radius) * this.pi;
     }
 }
+/// <reference path="shape.ts" />
+class Triangle extends Shape {
+    constructor(side1, side2, side3, centerX, centerY, name) {
+        super(centerX, centerY, name);
+        this.side1 = side1;
+        this.side2 = side2;
+        this.side3 = side3;
+    }
+    logShape() {
+        let instance = this.constructor;
+        console.log(" I am a  " + instance.name + "and I got 3 sides .");
+    }
+    calculateArea() {
+        let sides = [this.side1, this.side2, this.side3];
+        let base = Math.max(...sides);
+        return (this.height * base) / 2;
+    }
+}
 /// <reference path="utility.ts" />
 /// <reference path="result.ts" />
 /// <reference path="player.ts" />
 /// <reference path="scoreboard.ts" />
 /// <reference path="shapes/shape.ts" />
 /// <reference path="shapes/circle.ts" />
+/// <reference path="shapes/triangle.ts" />
 class Game {
     constructor(player, problemCount, factor) {
         this.player = player;
@@ -128,6 +147,7 @@ class Game {
 /// <reference path="game.ts" />
 let newGame;
 let circle1 = new Circle(5, 5, 5, "Circle");
+let triangle1 = new Triangle(1, 2, 3, 4, 5, "Triangle");
 let shapes = [circle1];
 console.log(circle1.logShape());
 // add click handler to the start game button
@@ -138,12 +158,12 @@ document.getElementById('startGame').addEventListener('click', () => {
     const factor = Number(Utility.getInputValue('factor'));
     newGame = new Game(player, problemCount, factor);
     newGame.displayGame();
-    document.getElementById('showOptions').addEventListener('click', () => {
-        Utility.generatedropDown(shapes);
-    });
 });
 // add click handler to the calculate score button
 document.getElementById('calculate').addEventListener('click', () => {
     newGame.calculateScore();
+});
+document.getElementById('showOptions').addEventListener('click', () => {
+    Utility.generatedropDown(shapes);
 });
 //# sourceMappingURL=app.js.map

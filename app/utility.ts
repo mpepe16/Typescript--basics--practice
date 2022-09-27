@@ -13,10 +13,9 @@ class Utility {
         let element = document.createElement('option');
         element.textContent = option;
         element.value = option;
+        element.setAttribute('id', i.toString());
         dropdownElement.appendChild(element);
       }
-      
     }
-  
   }
 

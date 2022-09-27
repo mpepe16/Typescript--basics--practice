@@ -23,5 +23,9 @@ class Triangle extends Shape {
          let base = Math.max(...sides);
          return (this.height * base) / 2;
     }
-    
+    collectProperties(): number [] {
+        let properties = [];
+        properties.push(this.side1, this.side2, this.side3, this.height);
+        return properties;
+    }
 }

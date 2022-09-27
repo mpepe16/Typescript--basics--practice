@@ -62,4 +62,5 @@ class Game {
       document.getElementById('calculate')!.setAttribute('disabled', 'true');
       
     }  
+
   }

@@ -3,7 +3,7 @@ abstract class Shape{
     centerY : number;
     name : string;
     constructor(centerX : number, centerY : number, name : string){
-        this.centerX = centerX
+        this.centerX = centerX;
         this.centerY = centerY;
         this.name = name;
     }
@@ -14,4 +14,5 @@ abstract class Shape{
         return this.centerY;
     }
     abstract logShape() : void;
+    abstract collectProperties() : number [];
 }

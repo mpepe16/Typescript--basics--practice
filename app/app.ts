@@ -7,9 +7,9 @@
 
 let newGame: Game;
 
-let circle1 : Shape = new Circle(5,5,5, "Circle");
-let triangle1 : Shape = new Triangle(1,2,3,4,5, "Triangle");
-let shapes = [circle1];
+let circle1 : Circle = new Circle(5,5,5, "Circle");
+let triangle1 : Triangle = new Triangle(1,2,3,4,5, "Triangle");
+let shapes = [circle1,triangle1];
 console.log(circle1.logShape());
 // add click handler to the start game button
 document.getElementById('startGame')!.addEventListener('click', () => {

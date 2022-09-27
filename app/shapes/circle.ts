@@ -19,5 +19,9 @@ class Circle extends Shape {
     calculateAre(): number{
         return (this.radius * this.radius) * this.pi;
     }
-    
+    collectProperties(): number [] {
+        let properties = [];
+        properties.push(this.radius, this.pi);
+        return properties;
+    }
 }
